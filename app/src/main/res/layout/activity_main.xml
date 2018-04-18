@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.zjj.mytoolbar.MainActivity"
+    android:orientation="vertical">
+
+    <com.zjj.mytoolbarlibrary.MyToolBar
+        android:id="@+id/toolbar"
+        app:leftText="返回"
+        app:titleText="标题"
+        app:leftIcon="@mipmap/back"
+        app:rightIcon="@mipmap/set"
+        app:leftAppearance="@style/Title_Appearance"
+        app:titleAppearance="@style/Title_Appearance"
+        android:layout_width="match_parent"
+        android:background="@color/colorPrimary"
+        android:layout_height="?attr/actionBarSize"/>
+
+</LinearLayout>

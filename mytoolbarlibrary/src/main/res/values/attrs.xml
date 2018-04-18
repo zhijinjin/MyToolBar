@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="MyToolBar">
+        <attr name="leftText" format="string" />
+        <attr name="leftVisible" format="boolean" />
+        <attr name="leftAppearance" format="reference" />
+        <attr name="leftSize" format="dimension" />
+        <attr name="leftColor" format="color" />
+        <attr name="leftIcon" format="reference" />
+        <attr name="leftMarginRight" format="dimension" />
+        <attr name="leftMarginLeft" format="dimension" />
+
+        <attr name="titleText" format="string" />
+        <attr name="titleVisible" format="boolean" />
+        <attr name="titleAppearance" format="reference" />
+        <attr name="titleSize" format="dimension" />
+        <attr name="titleColor" format="color" />
+        <attr name="titleIcon" format="reference" />
+        <attr name="title_gravity">
+            <flag name="top" value="0x30" />
+            <flag name="bottom" value="0x50" />
+            <flag name="left" value="0x03" />
+            <flag name="right" value="0x05" />
+            <flag name="center_vertical" value="0x10" />
+            <flag name="fill_vertical" value="0x70" />
+            <flag name="center_horizontal" value="0x01" />
+            <flag name="fill_horizontal" value="0x07" />
+            <flag name="center" value="0x11" />
+            <flag name="fill" value="0x77" />
+            <flag name="clip_vertical" value="0x80" />
+            <flag name="clip_horizontal" value="0x08" />
+            <flag name="start" value="0x00800003" />
+            <flag name="end" value="0x00800005" />
+        </attr>
+
+        <attr name="rightText" format="string" />
+        <attr name="rightVisible" format="boolean" />
+        <attr name="rightAppearance" format="reference" />
+        <attr name="rightSize" format="dimension" />
+        <attr name="rightColor" format="color" />
+        <attr name="rightIcon" format="reference" />
+        <attr name="rightMarginRight" format="dimension" />
+        <attr name="rightMarginLeft" format="dimension" />
+    </declare-styleable>
+</resources>
