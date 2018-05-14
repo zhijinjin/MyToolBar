@@ -6,12 +6,12 @@ import android.content.res.TypedArray;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.support.annotation.Nullable;
-import android.support.v7.widget.TintTypedArray;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.view.Gravity;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 
 
@@ -53,8 +53,6 @@ public class MyToolBar extends Toolbar  implements View.OnClickListener{
     @SuppressLint("RestrictedApi")
     private void initCustomView(Context context, @Nullable AttributeSet attrs, int defStyleAttr){
         @SuppressLint("RestrictedApi")
-//        TintTypedArray tintTypedArray = TintTypedArray.obtainStyledAttributes(context,attrs,
-//                android.support.v7.appcompat.R.styleable.Toolbar, defStyleAttr, 0);
         TypedArray typedArray = context.obtainStyledAttributes(attrs,R.styleable.MyToolBar);
 
         if(!isChild(mLeftTitle)){
@@ -87,8 +85,8 @@ public class MyToolBar extends Toolbar  implements View.OnClickListener{
             mLeftTitle.setClickable(true);
             mLeftTitle.setOnClickListener(this);
 
-            layoutParams.leftMargin = typedArray.getDimensionPixelSize(
-                    R.styleable.MyToolBar_leftMarginLeft, dp2px(DEFAULT_BACK_MARGIN_RIGHT));
+//            layoutParams.leftMargin = typedArray.getDimensionPixelSize(
+//                    R.styleable.MyToolBar_leftMarginLeft, dp2px(DEFAULT_BACK_MARGIN_RIGHT));
 
             addView(mLeftTitle, layoutParams);
         }
@@ -127,6 +125,7 @@ public class MyToolBar extends Toolbar  implements View.OnClickListener{
             addView(mTitle, layoutParams);
         }
 
+
         if(!isChild(mRightTitle)){
             mRightTitle = new TextView(context);
             mRightTitle.setSingleLine();
@@ -146,7 +145,7 @@ public class MyToolBar extends Toolbar  implements View.OnClickListener{
 
             Drawable drawable = typedArray.getDrawable(R.styleable.MyToolBar_rightIcon);
             if(null!=drawable){
-                mRightTitle.setCompoundDrawablesWithIntrinsicBounds(drawable, null, null, null);
+                mRightTitle.setCompoundDrawablesWithIntrinsicBounds(null, null, drawable, null);
             }
 
             setRightText(typedArray.getString(R.styleable.MyToolBar_rightText));
@@ -169,6 +168,12 @@ public class MyToolBar extends Toolbar  implements View.OnClickListener{
     public void setLeftText(CharSequence title){
         if (mLeftTitle != null) {
             mLeftTitle.setText(title);
+        }
+    }
+
+    public void setLeftDrawable(Drawable drawable){
+        if(null!=drawable){
+            mLeftTitle.setCompoundDrawablesWithIntrinsicBounds(drawable, null, null, null);
         }
     }
 
@@ -197,6 +202,12 @@ public class MyToolBar extends Toolbar  implements View.OnClickListener{
         }
     }
 
+    public void setTitleDrawable(Drawable drawable){
+        if(null!=drawable){
+            mTitle.setCompoundDrawablesWithIntrinsicBounds(drawable, null, null, null);
+        }
+    }
+
     public void setTitleVisible(boolean visible){
         mTitleVisible = visible;
         if (mTitle != null) {
@@ -209,6 +220,13 @@ public class MyToolBar extends Toolbar  implements View.OnClickListener{
             mRightTitle.setText(title);
         }
     }
+
+    public void setRightDrawable(Drawable drawable){
+        if(null!=drawable){
+            mRightTitle.setCompoundDrawablesWithIntrinsicBounds(null, null, drawable, null);
+        }
+    }
+
 
     public void setRightTextSize(float size){
         if (mRightTitle != null) {
